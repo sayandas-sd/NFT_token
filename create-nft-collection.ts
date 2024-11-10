@@ -32,10 +32,11 @@ const transaction = await createNft(umi, {
     mint: collectionMint,
     name: "My collection",
     symbol: 'SD',
-    uri: "http://...",
+    uri: "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-nft-collection-offchain-data.json",
     sellerFeeBasisPoints: percentAmount(0),
     isCollection: true,
 })
+await transaction.sendAndConfirm(umi);
 
 const createdCollectionNft = await fetchDigitalAsset(
     umi,
